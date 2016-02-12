@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import {RaisedButton} from 'material-ui';
 
 export default class Login extends React.Component {
 	constructor(props){
@@ -11,7 +12,7 @@ export default class Login extends React.Component {
 	
 	render(){
 		return <div>
-			<p>TEST!!!</p>
+			 <RaisedButton label="Default" />
 	  	</div>		
 	}
 }
