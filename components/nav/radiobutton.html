@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html lang="en" xml:lang="en">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>	  
+    <form id="miForm">    
+        <input type="radio" name="opcion" value="radio1" />Radio1
+        <input type="radio" name="opcion" value="radio2"/>Radio2
+        <input type="radio" name="opcion" value="radio3" />Radio3
+        <input type="radio" name="opcion" value="radio4"/>Radio4           
+	</form> 	   	   	   
+	
+  	
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" >
+	    $(document).ready(function () {
+    	    $("#miForm input[name=opcion]").click(function(){
+    	    	var $elegido =$("input[name=opcion]:checked");
+	            if ($elegido.val() == "radio2")
+	                alert("SELECCIONADO " +$elegido.val());
+	            else {
+	                alert("NINGUN VALOR SELECCIONADO")  
+	            }   
+    	    });    	    
+	    });
+	</script>
+	
+</body>
+</html>
