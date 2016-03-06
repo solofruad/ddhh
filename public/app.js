@@ -108,8 +108,13 @@ var Login = (function (_React$Component) {
 				{ className: 'container-login' },
 				_react2['default'].createElement('div', { className: 'bg', onClick: this.openLogin.bind(this) }),
 				_react2['default'].createElement(
-					_reactMaterialize.CardPanel,
-					{ className: 'card-login grey lighten-4 grey text-darken-1 center', onClick: this.mantenerAbierto.bind(this) },
+					_reactMaterialize.Card,
+					{ className: 'grey lighten-4 grey text-darken-1 center',
+						header: _react2['default'].createElement(
+							_reactMaterialize.CardTitle,
+							{ className: 'card-title-login' },
+							'Iniciar Sesion'
+						) },
 					_react2['default'].createElement(_reactMaterialize.Input, { label: 'Usuario', s: 12, validate: true }),
 					_react2['default'].createElement(_reactMaterialize.Input, { type: 'password', label: 'Password', s: 12, validate: true }),
 					_react2['default'].createElement(
@@ -170,25 +175,29 @@ module.exports = exports['default'];
  * Modules Dependencies
  */
 
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactMaterialize = require('react-materialize');
+
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var Menu = (function (_React$Component) {
 	_inherits(Menu, _React$Component);
@@ -196,51 +205,132 @@ var Menu = (function (_React$Component) {
 	function Menu(props) {
 		_classCallCheck(this, Menu);
 
-		_get(Object.getPrototypeOf(Menu.prototype), "constructor", this).call(this, props);
+		_get(Object.getPrototypeOf(Menu.prototype), 'constructor', this).call(this, props);
+		this.state = { register: false };
+		this.openRegister = this.openRegister.bind(this);
+		this.mantenerAbierto = this.mantenerAbierto.bind(this);
 	}
 
 	_createClass(Menu, [{
-		key: "render",
+		key: 'openRegister',
+		value: function openRegister() {
+			if (!this.state.register) this.setState({ register: true });else this.setState({ register: false });
+		}
+	}, {
+		key: 'mantenerAbierto',
+		value: function mantenerAbierto() {
+			this.setState({ register: true });
+		}
+	}, {
+		key: 'render',
 		value: function render() {
-			return _react2["default"].createElement(
-				"div",
+			var register = this.state.register ? _react2['default'].createElement(
+				'div',
+				{ className: 'container-login' },
+				_react2['default'].createElement('div', { className: 'bg2', onClick: this.openRegister.bind(this) }),
+				_react2['default'].createElement(
+					_reactMaterialize.Card,
+					{ className: 'center',
+						header: _react2['default'].createElement(
+							_reactMaterialize.CardTitle,
+							{ className: 'card-title-register' },
+							'Registrarse'
+						) },
+					_react2['default'].createElement(
+						_reactMaterialize.Input,
+						{ label: 'Usuario', s: 11, validate: true },
+						_react2['default'].createElement(
+							_reactMaterialize.Icon,
+							null,
+							'account_circle'
+						)
+					),
+					_react2['default'].createElement(
+						_reactMaterialize.Input,
+						{ label: 'Email', type: 'email', s: 11, validate: true },
+						_react2['default'].createElement(
+							_reactMaterialize.Icon,
+							null,
+							'email'
+						)
+					),
+					_react2['default'].createElement(
+						_reactMaterialize.Input,
+						{ type: 'password', label: 'Contraseña', s: 11, validate: true },
+						_react2['default'].createElement(
+							_reactMaterialize.Icon,
+							null,
+							'lock'
+						)
+					),
+					_react2['default'].createElement(
+						_reactMaterialize.Input,
+						{ type: 'password', label: 'Repetir Contraseña', s: 11, validate: true },
+						_react2['default'].createElement(
+							_reactMaterialize.Icon,
+							null,
+							'lock_outline'
+						)
+					),
+					_react2['default'].createElement(
+						_reactMaterialize.Button,
+						{ waves: 'light', className: 'btn-register deep-orange lighten-1' },
+						'Registrar'
+					)
+				)
+			) : null;
+			return _react2['default'].createElement(
+				'div',
 				null,
-				_react2["default"].createElement(
-					"nav",
-					{ className: "transparent sinShadow" },
-					_react2["default"].createElement(
-						"div",
-						{ className: "nav-wrapper" },
-						_react2["default"].createElement(
-							"a",
-							{ href: "#", className: "brand-logo center" },
-							"Logo"
+				_react2['default'].createElement(
+					'nav',
+					{ className: 'transparent sinShadow' },
+					_react2['default'].createElement(
+						'div',
+						{ className: 'nav-wrapper' },
+						_react2['default'].createElement(
+							'a',
+							{ href: '#', className: 'brand-logo center' },
+							'Logo'
 						),
-						_react2["default"].createElement(
-							"ul",
-							{ id: "nav-mobile", className: "hide-on-med-and-down" },
-							_react2["default"].createElement(
-								"li",
-								{ className: "left" },
-								_react2["default"].createElement(
-									"a",
-									{ href: "#" },
-									_react2["default"].createElement(
-										"i",
-										{ className: "material-icons" },
-										"menu"
+						_react2['default'].createElement(
+							'ul',
+							{ id: 'nav-mobile', className: 'hide-on-med-and-down' },
+							_react2['default'].createElement(
+								'li',
+								{ className: 'left' },
+								_react2['default'].createElement(
+									'a',
+									{ href: '#' },
+									_react2['default'].createElement(
+										'i',
+										{ className: 'material-icons' },
+										'menu'
 									)
 								)
 							),
-							_react2["default"].createElement(
-								"li",
-								{ className: "right" },
-								_react2["default"].createElement(
-									"a",
-									{ href: "#" },
-									"Registrate"
+							_react2['default'].createElement(
+								'li',
+								{ className: 'right' },
+								_react2['default'].createElement(
+									'a',
+									{ href: '#', onClick: this.openRegister.bind(this) },
+									'Registrarse'
 								)
 							)
+						)
+					)
+				),
+				_react2['default'].createElement(
+					_reactMaterialize.Row,
+					null,
+					_react2['default'].createElement(
+						_reactMaterialize.Col,
+						{ id: 'card-register', s: 4 },
+						_react2['default'].createElement(
+							ReactCSSTransitionGroup,
+							{ transitionName: 'example', transitionAppear: true, transitionAppearTimeout: 300, transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
+							register
 						)
 					)
 				),
@@ -250,12 +340,12 @@ var Menu = (function (_React$Component) {
 	}]);
 
 	return Menu;
-})(_react2["default"].Component);
+})(_react2['default'].Component);
 
-exports["default"] = Menu;
-module.exports = exports["default"];
+exports['default'] = Menu;
+module.exports = exports['default'];
 
-},{"react":260}],4:[function(require,module,exports){
+},{"react":260,"react-addons-css-transition-group":31,"react-materialize":71}],4:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -13447,9 +13537,9 @@ var Modal = function (_React$Component) {
               'div',
               { className: 'modal-footer' },
               _react2.default.createElement(
-                _Button2.default,
+                _Button2.default,                
                 { waves: 'light', modal: 'close', flat: true },
-                'Close'
+                'Cerrar'
               )
             )
           ) },

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import $ from 'jquery';
-import {Button, Row, Col, Input, Icon, CardPanel} from 'react-materialize';
+import {Button, Row, Col, Input, Icon, Card, CardTitle} from 'react-materialize';
 
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
@@ -27,11 +27,12 @@ export default class Login extends React.Component {
 	render(){
 		let login = this.state.login ? 	
 				<div className="container-login"><div className="bg" onClick={this.openLogin.bind(this)}></div>		
-				<CardPanel className="card-login grey lighten-4 grey text-darken-1 center" onClick={this.mantenerAbierto.bind(this)}>            		
+				<Card className="grey lighten-4 grey text-darken-1 center"
+					  	header={<CardTitle className="card-title-login">Iniciar Sesion</CardTitle>}>				
 					<Input label="Usuario" s={12} validate />
 					<Input type="password" label="Password" s={12} validate />
 					<Button waves='light' className="deep-orange lighten-1">Ingresar</Button>		
-        		</CardPanel></div>: 
+        		</Card></div>: 
 			null;
 		return <Row>
 			<Col s={8}>
@@ -48,6 +49,7 @@ export default class Login extends React.Component {
 					{login}
 				</ReactCSSTransitionGroup>
 			</Col>
+						
 		</Row>				
 	}
 }
