@@ -1,54 +1,3 @@
-/*
-	CSS RESET -- Reseteando todos los estilos que por defecto tienen los navegadores
- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-	font-family: 'Source Sans Pro', sans-serif !important;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-*{
-	box-sizing: border-box;
-}
 
 /*
 	STYLESHEET -- Estilo de CSS propio
@@ -85,6 +34,8 @@ body, html
     color: #333333;
     display: inline-block;
     font-size: 1.2rem;
+    width: 70%;
+    height: 8%;
 }
 
 .sinShadow{
@@ -97,7 +48,7 @@ body, html
 	position: fixed;
 }
 .container-login{
-
+	margin-top: 40% !important;
 }
 .bg, .bg2{
 	top: 0;
@@ -110,33 +61,6 @@ body, html
 
 .bg2{
 	background: rgba(0,0,0,0.5);
-}
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .2s ease-in;
 }
 
 .btn:hover{
@@ -155,9 +79,45 @@ body, html
 }
 #card-register{
 	position: fixed;
-	left: 30% !important;
+	left: 35% !important;
 	z-index: 2;
 }
 .btn-register{
 	margin-top: 7%;
 }
+.txt-small{
+	padding-left: 3%;
+	text-align: left;	
+	color: #9e9e9e !important;
+	margin-top: 7% !important;
+	font-size: 0.9em;
+}
+
+.txt-small a{
+	color: inherit;
+}
+.slide-index > div > a{
+	position: fixed;
+	top:3%;
+	left: 2%; 
+	color: white;
+}
+.slide-index > div > ul{
+	background: #002535;
+	color: white !important;
+	text-align: center;
+}
+.slide-index > div > ul > div > li > a {
+	color: white !important;
+}
+.slide-index > div > ul > div > li:hover {
+	background: #29b6f6;
+}
+.slide-index > div > a > i{
+	font-size: 36px;
+}
+
+.vertical-aling{
+	margin-top: 100%;
+}
+

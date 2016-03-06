@@ -16,7 +16,7 @@ let history = createHashHistory({
 });
 
 let routes = <Route component={Menu} path='/'>
-		<IndexRoute component={Login} />				
+		<IndexRoute component={Login} />			
 	</Route>
 
 render(<Router history={history}>{routes}</Router>, document.getElementById('container'));
