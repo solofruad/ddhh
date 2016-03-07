@@ -118,6 +118,28 @@ body, html
 }
 
 .vertical-aling{
-	margin-top: 100%;
+	margin-top: 50%;
+}
+li.slide-logo{
+	margin-top: 40%;
+}
+li.slide-logo a{
+	color:white !important;
+}
+li.slide-logo:hover, .slide-footer > li:hover{
+	background: none !important;
 }
 
+.slide-footer{
+	margin-top: 40%;
+}
+
+.slide-footer > li, .slide-footer > li > a{
+	height: 5%;
+	font-size: 0.8rem;
+}
+
+.slide-footer > li > a{
+	display: inline-block;
+	height: 10% !important;
+}

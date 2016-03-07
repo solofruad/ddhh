@@ -358,6 +358,15 @@ var Menu = (function (_React$Component) {
 						_reactMaterialize.SideNav,
 						{ id: 'slide-out', className: 'full', left: true },
 						_react2['default'].createElement(
+							'li',
+							{ className: 'slide-logo' },
+							_react2['default'].createElement(
+								'a',
+								{ href: '#' },
+								'LOGO'
+							)
+						),
+						_react2['default'].createElement(
 							'div',
 							{ className: 'vertical-aling' },
 							_react2['default'].createElement(
@@ -385,6 +394,33 @@ var Menu = (function (_React$Component) {
 									'a',
 									{ href: '#' },
 									'Contacto'
+								)
+							)
+						),
+						_react2['default'].createElement(
+							'div',
+							{ className: 'slide-footer' },
+							_react2['default'].createElement(
+								'li',
+								null,
+								_react2['default'].createElement(
+									'a',
+									{ href: '#' },
+									_react2['default'].createElement('i', { className: 'fa fa-facebook' })
+								),
+								_react2['default'].createElement(
+									'a',
+									{ href: '#' },
+									_react2['default'].createElement('i', { className: 'fa fa-envelope-o' })
+								)
+							),
+							_react2['default'].createElement(
+								'li',
+								null,
+								_react2['default'].createElement(
+									'a',
+									{ href: '#' },
+									'Copyright HatLab @2016'
 								)
 							)
 						)
