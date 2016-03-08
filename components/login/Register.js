@@ -3,57 +3,27 @@
  */
 
 import React from 'react';
+import {Card, CardTitle, Input, Button, Icon} from 'react-materialize';
 
-export default class Register extends React.Component {
+export default class Register extends React.Component {	
+	
 	constructor(props){
-		super(props);
+		super(props);		
+	}
+	openRegister(){
+		this.props.open.call(null);
 	}
 	
-	render(){
-		return <div className="row">
-			<form className="col s12 formulario-registrar">
-				<div className="row center">
-		        	<div className="col s12 m6">
-			        	<div className="card">
-		            		<div className="card-content">	            			
-						      <div className="row">
-						        <div className="input-field col s6">
-						          <input id="first_name" type="text" className="validate"/>
-						          <label for="first_name">Nombre</label>
-						        </div>
-						        <div className="input-field col s6">
-						          <input id="last_name" type="text" className="validate"/>
-						          <label for="last_name">Apellido</label>
-						        </div>
-						      </div>
-						      <div className="row">
-						        <div className="input-field col s12">
-						          <input id="email" type="email" className="validate"/>
-						          <label for="email">Email</label>
-						        </div>
-						      </div>						      
-						      <div className="row">
-						        <div className="input-field col s6">
-						          <input id="password" type="password" className="validate"/>
-						          <label for="password">Contraseña</label>
-						        </div>						      
-						        <div className="input-field col s6">
-						          <input id="confirm-password" type="password" className="validate"/>
-						          <label for="password">Confirmar contraseña</label>
-						        </div>
-						      </div>						      							   						  	
-							</div>
-							<div className="card-action">
-					        	<button className="btn waves-effect waves-light center-align" type="submit" name="action">Enviar
-								    <i className="material-icons right">send</i>
-							  	</button>
-					        </div>
-						</div>
-					</div>
-				</div>
-			</form>			 
-		</div>
-
-		
+	render(){			
+		return <div><div className="bg2" onClick={this.openRegister.bind(this)}></div>		
+					<Card className="center"
+					  	header={<CardTitle className="card-title-register">Registrarse</CardTitle>}>
+						<Input label="Usuario" s={11} validate ><Icon>account_circle</Icon></Input>
+						<Input label="Email" type="email" s={11} validate ><Icon>email</Icon></Input>
+						<Input type="password" label="Contraseña" s={11} validate><Icon>lock</Icon></Input>
+						<Input type="password" label="Repetir Contraseña" s={11} validate><Icon>lock_outline</Icon></Input>						
+						<Button waves='light' className="btn-register deep-orange lighten-1">Registrar</Button>							
+					</Card>					
+				</div>	  	
 	}
 }

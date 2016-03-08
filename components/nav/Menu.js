@@ -3,7 +3,9 @@
  */
 
 import React from 'react';
-import {Modal, Card, CardTitle, Input, Button, Icon, Col, Row, SideNav} from 'react-materialize';
+import {Col, Row} from 'react-materialize';
+import Register from '../login/Register';
+import NavSlide from './NavSlide';
 
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
@@ -12,31 +14,22 @@ export default class Menu extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = { register: false};
-		this.openRegister = this.openRegister.bind(this);
-		this.mantenerAbierto = this.mantenerAbierto.bind(this);
+		this.openRegister = this.openRegister.bind(this);	
 	}
+	getInitialState(){
+		return { register:false };
+	}
+
 	openRegister(){
 		if(!this.state.register)
 			this.setState( {register:true} )
 		else
 			this.setState( {register:false} )
 	}
-	mantenerAbierto(){
-		this.setState( {register:true} );
-	}
-   	
+
 	render(){	
 		let register = this.state.register ? 	
-				<div><div className="bg2" onClick={this.openRegister.bind(this)}></div>		
-					<Card className="center"
-					  	header={<CardTitle className="card-title-register">Registrarse</CardTitle>}>
-						<Input label="Usuario" s={11} validate ><Icon>account_circle</Icon></Input>
-						<Input label="Email" type="email" s={11} validate ><Icon>email</Icon></Input>
-						<Input type="password" label="Contraseña" s={11} validate><Icon>lock</Icon></Input>
-						<Input type="password" label="Repetir Contraseña" s={11} validate><Icon>lock_outline</Icon></Input>						
-						<Button waves='light' className="btn-register deep-orange lighten-1">Registrar</Button>							
-					</Card>					
-				</div>: 
+				<Register open={this.openRegister}/>: 
 			null;			
 		return <div>
 				  <nav className="transparent sinShadow">
@@ -47,28 +40,14 @@ export default class Menu extends React.Component {
 				      </ul>
 				    </div>
 				  </nav>
-				  	<div className="slide-index">
-					  	<SideNav id="slide-out" className="full" left={true}>
-					  		<li className="slide-logo"><a href="#">LOGO</a></li>
-							<div className="vertical-aling">							
-								<li className="valign"><a href="#">Inicio</a></li>
-								<li className="valign"><a href="#">Sobre MovilizApp</a></li>
-				  				<li className="valign"><a href="#">Contacto</a></li>
-			  				</div>
-			  				<div className="slide-footer">
-			  					<li><a href="#"><i className="fa fa-facebook"></i></a><a href="#"><i className="fa fa-envelope-o"></i></a></li>
-			  					<li><a href="#">Copyright HatLab @2016</a></li>
-			  				</div>
-						</SideNav>	
-					</div>
+				  <NavSlide />	
 				  <Row>				  	
 					<Col id="card-register" s={4}>
 				  		<ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout={300} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
 							{register}
 						</ReactCSSTransitionGroup>
 					</Col>
-				  </Row>
-			{this.props.children}
-	  	</div>
+				  </Row>			
+		  	</div>
 	}
 }
